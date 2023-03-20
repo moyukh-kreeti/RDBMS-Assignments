@@ -1,3 +1,7 @@
+-- Postgres SQL
+
+-- 1. Schema Creation
+
 CREATE TABLE regions (
     region_id SERIAL PRIMARY KEY,
     region_name VARCHAR(255)
@@ -64,6 +68,8 @@ CREATE TABLE dependents (
 
 );
 
+-- 2. Insert 5 rows in the jobs, dependents, regions, countries, locations, departments tables and  10 rows in the Employee table.
+
 INSERT INTO regions VALUES
 (1,'South-Asia'),
 (2,'Europe'),
@@ -113,8 +119,15 @@ INSERT INTO dependents VALUES
 (4,'Narayan','Samanto','',3),
 (5,'Mohan','Sanyal','',5);
 
+-- 3. Column:
+--     a. In departments table, add a new field ‘manager_name’ of type VARCHAR
+
 ALTER TABLE departments ADD COLUMN manager_name VARCHAR(255);
 
+--     b. REMOVE field max_salary from jobs. 
+
 ALTER TABLE jobs DROP COLUMN max_salary;
+
+--     c. In the locations table, rename postal_code column to pincode.
 
 ALTER TABLE locations RENAME postal_code TO pincode;
