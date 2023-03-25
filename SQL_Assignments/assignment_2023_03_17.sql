@@ -54,7 +54,8 @@ CREATE TABLE employees (
     manager_id INTEGER,
     department_id INTEGER,
     FOREIGN KEY (job_id) REFERENCES jobs(job_id),
-    FOREIGN KEY (department_id) REFERENCES departments(department_id)
+    FOREIGN KEY (department_id) REFERENCES departments(department_id),
+    FOREIGN KEY (manager_id) REFERENCES employees(employee_id)
 );
 
 CREATE TABLE dependents (
@@ -110,7 +111,12 @@ INSERT INTO employees VALUES
 (2,'Sumitava','Chakraborty','sumitava@gmail.com','1234567890','2023-02-15',1,730000,1,1),
 (3,'Aniket','Laha','aniket@gmail.com','0123456789','2020-03-02',3,1500000,2,3),
 (4,'Riju','Sekh','riju@gmail.com','0352121356','2022-01-15',5,700000,3,5),
-(5,'Rima','Halder','rima@gmail.com','1253691590','2022-07-22',2,600000,1,2);
+(5,'Rima','Halder','rima@gmail.com','1253691590','2022-07-22',2,600000,1,2),
+(6,'Sayantan','Sadhu','sayantan@gmail.com','0123456789','2020-06-01',1,730000,1,1),
+(7,'Sayantan','Naskar','naskarsayantan@gmail.com','1234567890','2019-09-01',5,700000,4,5),
+(8,'Santosh','Pal','santosh@gmail.com','0123456789','2020-01-01',6,340000,8,4),
+(9,'Soumodeep','Mandal','soumodeep0195@gmail.com','1234567890','2023-03-01',7,250000,8,4),
+(10,'Sona','Murmu','phoenix@gmail.com','0123456789','2023-01-01',2,550000,5,2);
 
 INSERT INTO dependents VALUES
 (1,'Rahul','Ruidas','',2),
