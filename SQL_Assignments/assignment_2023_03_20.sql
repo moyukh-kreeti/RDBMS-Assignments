@@ -5,12 +5,12 @@ SELECT * FROM Employees e WHERE e.last_name LIKE 'Sah%';
 -- 2. Select 10 employees who were hired between 1st June, 2021 to 15th February,
 -- 2022. Start retrieving from the 4th record in the table
 
-SELECT * FROM Employees e WHERE e.hire_date >= '2021-06-01' AND e.hire_date <  '2022-02-01' LIMIT 10 OFFSET 4;
+SELECT * FROM Employees e WHERE e.hire_date >= '2021-06-01' AND e.hire_date <  '2022-02-01' LIMIT 10 OFFSET 3;
 
 -- 3. Find distinct top 5 salary values (only salary column), using alias for column as
 -- “Top 5 salaries”
 
-SELECT salary as "Top 5 salaries" FROM Employees e ORDER BY salary DESC LIMIT 5;
+SELECT DISTINCT salary as "Top 5 salaries" FROM Employees e ORDER BY salary DESC LIMIT 5;
 
 -- 4. Find first_name, last_name and email of employees from the employees table
 -- where salary lies between 25000 to 45000
